@@ -1,9 +1,7 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: liulei
- * Date: 16/4/19
- * Time: 下午5:20
+ * Date: 16/8/11
+ * Time: pm 5:16
  */
 use Workerman\Worker;
 

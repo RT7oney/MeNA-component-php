@@ -1,0 +1,180 @@
+2016-08-11 11:40:03 Workerman[10002.php] start in DEBUG mode
+2016-08-11 11:42:45 Workerman[10002.php] Stopping ...
+2016-08-11 11:42:45 Workerman[10002.php] has been stopped
+2016-08-11 11:42:45 Workerman[10002.php] start in DEBUG mode
+2016-08-11 11:42:50 WORKER EXIT UNEXPECTED 
+2016-08-11 11:44:39 WORKER EXIT UNEXPECTED 
+2016-08-11 11:44:53 Workerman[10002.php] Stopping ...
+2016-08-11 11:44:53 Workerman[10002.php] has been stopped
+2016-08-11 17:32:19 Workerman[10002.php] start in DEBUG mode
+2016-08-11 17:51:46 Workerman[10002.php] Stopping ...
+2016-08-11 17:51:46 Workerman[10002.php] has been stopped
+2016-08-11 17:59:21 Workerman[10002.php] start in DEBUG mode
+2016-08-12 07:21:32 Workerman[10002.php] Stopping ...
+2016-08-12 07:21:32 Workerman[10002.php] has been stopped
+2016-08-12 07:21:34 Workerman[10002.php] start in DEBUG mode
+2016-08-12 18:23:29 Workerman[10002.php] Stopping ...
+2016-08-12 18:23:29 Workerman[10002.php] has been stopped
+2016-08-12 18:23:30 Workerman[10002.php] start in DEBUG mode
+2016-08-12 18:23:36 WORKER EXIT UNEXPECTED E_ERROR Uncaught Error: Call to undefined function mysql_connect() in /www/code/MeNA/MeNA-Component/common/Mysql.php:26
+Stack trace:
+#0 /www/code/MeNA/MeNA-Component/common/common.php(31): dbstuff->connect('127.0.0.1', 'root', 'RT7oney', 'MeNA-Component', 0)
+#1 /www/code/MeNA/MeNA-Component/10002.php(32): common_db_mysql_connect()
+#2 [internal function]: {closure}(Object(Workerman\Connection\TcpConnection), Array)
+#3 /www/code/MeNA/MeNA-Component/Workerman/Connection/TcpConnection.php(439): call_user_func(Object(Closure), Object(Workerman\Connection\TcpConnection), '{"email":"29708...')
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #20)
+#5 /www/code/MeNA/MeNA-Component/Workerman/Events/Select.php(251): call_user_func_array(Array, Array)
+#6 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(1463): Workerman\Events\Select->loop()
+#7 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(897): Workerman\Worker->run()
+#8 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(863): Workerman\Wor in /www/code/MeNA/MeNA-Component/common/Mysql.php on line 26
+2016-08-12 18:23:36 worker[none:68743] exit with status 65280
+2016-08-12 18:25:53 Workerman[10002.php] Stopping ...
+2016-08-12 18:25:53 Workerman[10002.php] has been stopped
+2016-08-12 18:25:54 Workerman[10002.php] start in DEBUG mode
+2016-08-12 18:25:57 WORKER EXIT UNEXPECTED 
+2016-08-12 18:26:02 Workerman[10002.php] Stopping ...
+2016-08-12 18:26:02 Workerman[10002.php] has been stopped
+2016-08-12 18:26:04 Workerman[10002.php] start in DEBUG mode
+2016-08-12 18:26:09 Workerman[10002.php] Stopping ...
+2016-08-12 18:26:09 Workerman[10002.php] has been stopped
+2016-08-12 18:27:05 Workerman[10002.php] start in DEBUG mode
+2016-08-12 18:27:11 WORKER EXIT UNEXPECTED E_ERROR Uncaught Error: Call to undefined function mysql_connect() in /www/code/MeNA/MeNA-Component/common/Mysql.php:26
+Stack trace:
+#0 /www/code/MeNA/MeNA-Component/common/common.php(31): dbstuff->connect('127.0.0.1', 'root', 'RT7oney', 'MeNA-Component', 0)
+#1 /www/code/MeNA/MeNA-Component/10002.php(32): common_db_mysql_connect()
+#2 [internal function]: {closure}(Object(Workerman\Connection\TcpConnection), Array)
+#3 /www/code/MeNA/MeNA-Component/Workerman/Connection/TcpConnection.php(439): call_user_func(Object(Closure), Object(Workerman\Connection\TcpConnection), '{"email":"29708...')
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #20)
+#5 /www/code/MeNA/MeNA-Component/Workerman/Events/Select.php(251): call_user_func_array(Array, Array)
+#6 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(1463): Workerman\Events\Select->loop()
+#7 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(897): Workerman\Worker->run()
+#8 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(863): Workerman\Wor in /www/code/MeNA/MeNA-Component/common/Mysql.php on line 26
+2016-08-12 18:27:11 worker[none:69079] exit with status 65280
+2016-08-12 18:29:23 Workerman[10002.php] Stopping ...
+2016-08-12 18:29:23 Workerman[10002.php] has been stopped
+2016-08-12 18:29:24 Workerman[10002.php] start in DEBUG mode
+2016-08-12 18:31:21 Workerman[10002.php] Stopping ...
+2016-08-12 18:31:21 Workerman[10002.php] has been stopped
+2016-08-12 18:31:23 Workerman[10002.php] start in DEBUG mode
+2016-08-12 18:32:43 Workerman[10002.php] Stopping ...
+2016-08-12 18:32:43 Workerman[10002.php] has been stopped
+2016-08-12 18:32:44 Workerman[10002.php] start in DEBUG mode
+2016-08-12 18:33:04 WORKER EXIT UNEXPECTED E_ERROR Uncaught Error: Call to undefined function mysql_connect() in /www/code/MeNA/MeNA-Component/common/Mysql.php:26
+Stack trace:
+#0 /www/code/MeNA/MeNA-Component/common/common.php(31): dbstuff->connect('127.0.0.1', 'root', 'RT7oney', 'MeNA-Component', 0)
+#1 /www/code/MeNA/MeNA-Component/10002.php(32): common_db_mysql_connect()
+#2 [internal function]: {closure}(Object(Workerman\Connection\TcpConnection), Array)
+#3 /www/code/MeNA/MeNA-Component/Workerman/Connection/TcpConnection.php(439): call_user_func(Object(Closure), Object(Workerman\Connection\TcpConnection), '{"email":"29708...')
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #20)
+#5 /www/code/MeNA/MeNA-Component/Workerman/Events/Select.php(251): call_user_func_array(Array, Array)
+#6 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(1463): Workerman\Events\Select->loop()
+#7 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(897): Workerman\Worker->run()
+#8 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(863): Workerman\Wor in /www/code/MeNA/MeNA-Component/common/Mysql.php on line 26
+2016-08-12 18:33:04 worker[none:69601] exit with status 65280
+2016-08-12 18:35:33 Workerman[10002.php] Stopping ...
+2016-08-12 18:35:33 Workerman[10002.php] has been stopped
+2016-08-12 18:35:34 Workerman[10002.php] start in DEBUG mode
+2016-08-12 18:35:42 WORKER EXIT UNEXPECTED E_ERROR Uncaught Error: Call to undefined function mysql_connect() in /www/code/MeNA/MeNA-Component/common/Mysql.php:26
+Stack trace:
+#0 /www/code/MeNA/MeNA-Component/common/common.php(31): dbstuff->connect('127.0.0.1', 'root', 'RT7oney', 'MeNA-Component', 0)
+#1 /www/code/MeNA/MeNA-Component/10002.php(33): common_db_mysql_connect()
+#2 [internal function]: {closure}(Object(Workerman\Connection\TcpConnection), Array)
+#3 /www/code/MeNA/MeNA-Component/Workerman/Connection/TcpConnection.php(439): call_user_func(Object(Closure), Object(Workerman\Connection\TcpConnection), '{"email":"29708...')
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #20)
+#5 /www/code/MeNA/MeNA-Component/Workerman/Events/Select.php(251): call_user_func_array(Array, Array)
+#6 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(1463): Workerman\Events\Select->loop()
+#7 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(897): Workerman\Worker->run()
+#8 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(863): Workerman\Wor in /www/code/MeNA/MeNA-Component/common/Mysql.php on line 26
+2016-08-12 18:35:42 worker[none:69866] exit with status 65280
+2016-08-12 18:39:08 Workerman[10002.php] Stopping ...
+2016-08-12 18:39:08 Workerman[10002.php] has been stopped
+2016-08-12 18:39:09 Workerman[10002.php] start in DEBUG mode
+2016-08-12 18:39:21 WORKER EXIT UNEXPECTED E_ERROR Uncaught Error: Call to undefined function mysql_connect() in /www/code/MeNA/MeNA-Component/common/Mysql.php:26
+Stack trace:
+#0 /www/code/MeNA/MeNA-Component/common/common.php(31): dbstuff->connect('127.0.0.1', 'root', 'RT7oney', 'MeNA-Component')
+#1 /www/code/MeNA/MeNA-Component/10002.php(33): common_db_mysql_connect()
+#2 [internal function]: {closure}(Object(Workerman\Connection\TcpConnection), Array)
+#3 /www/code/MeNA/MeNA-Component/Workerman/Connection/TcpConnection.php(439): call_user_func(Object(Closure), Object(Workerman\Connection\TcpConnection), '{"email":"29708...')
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #20)
+#5 /www/code/MeNA/MeNA-Component/Workerman/Events/Select.php(251): call_user_func_array(Array, Array)
+#6 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(1463): Workerman\Events\Select->loop()
+#7 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(897): Workerman\Worker->run()
+#8 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(863): Workerman\Worker in /www/code/MeNA/MeNA-Component/common/Mysql.php on line 26
+2016-08-12 18:39:21 worker[none:70120] exit with status 65280
+2016-08-12 18:59:37 Workerman[10002.php] Stopping ...
+2016-08-12 18:59:38 Workerman[10002.php] has been stopped
+2016-08-12 18:59:39 Workerman[10002.php] start in DEBUG mode
+2016-08-12 18:59:43 WORKER EXIT UNEXPECTED E_ERROR Uncaught Error: Call to undefined function mysql_connect() in /www/code/MeNA/MeNA-Component/common/Mysql.php:26
+Stack trace:
+#0 /www/code/MeNA/MeNA-Component/common/common.php(31): dbstuff->connect('localhost', 'root', 'RT7oney', 'MeNA-Component')
+#1 /www/code/MeNA/MeNA-Component/10002.php(33): common_db_mysql_connect()
+#2 [internal function]: {closure}(Object(Workerman\Connection\TcpConnection), Array)
+#3 /www/code/MeNA/MeNA-Component/Workerman/Connection/TcpConnection.php(439): call_user_func(Object(Closure), Object(Workerman\Connection\TcpConnection), '{"email":"29708...')
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #20)
+#5 /www/code/MeNA/MeNA-Component/Workerman/Events/Select.php(251): call_user_func_array(Array, Array)
+#6 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(1463): Workerman\Events\Select->loop()
+#7 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(897): Workerman\Worker->run()
+#8 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(863): Workerman\Worker in /www/code/MeNA/MeNA-Component/common/Mysql.php on line 26
+2016-08-12 18:59:43 worker[none:71333] exit with status 65280
+2016-08-12 19:01:26 Workerman[10002.php] Stopping ...
+2016-08-12 19:01:26 Workerman[10002.php] has been stopped
+2016-08-13 05:23:05 Workerman[10002.php] start in DEBUG mode
+2016-08-13 05:23:12 WORKER EXIT UNEXPECTED E_ERROR Uncaught Error: Call to undefined method MySQLi_DB::fetch_array() in /www/code/MeNA/MeNA-Component/10002.php:36
+Stack trace:
+#0 [internal function]: {closure}(Object(Workerman\Connection\TcpConnection), Array)
+#1 /www/code/MeNA/MeNA-Component/Workerman/Connection/TcpConnection.php(439): call_user_func(Object(Closure), Object(Workerman\Connection\TcpConnection), '{"email":"29708...')
+#2 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #20)
+#3 /www/code/MeNA/MeNA-Component/Workerman/Events/Select.php(251): call_user_func_array(Array, Array)
+#4 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(1463): Workerman\Events\Select->loop()
+#5 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(897): Workerman\Worker->run()
+#6 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(863): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#7 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(421): Workerman\Worker::forkWorkers()
+#8 /www/code/MeNA/MeNA-Component/10002.php(73): Workerman\Worke in /www/code/MeNA/MeNA-Component/10002.php on line 36
+2016-08-13 05:23:12 worker[none:75002] exit with status 65280
+2016-08-13 05:26:20 Workerman[10002.php] Stopping ...
+2016-08-13 05:26:20 Workerman[10002.php] has been stopped
+2016-08-13 05:26:20 Workerman[10002.php] start in DEBUG mode
+2016-08-13 05:26:25 WORKER EXIT UNEXPECTED 
+2016-08-13 05:26:25 worker[none:75263] exit with status 65280
+2016-08-13 06:40:07 Workerman[10002.php] Stopping ...
+2016-08-13 06:40:07 Workerman[10002.php] has been stopped
+2016-08-13 06:40:08 Workerman[10002.php] start in DEBUG mode
+2016-08-13 06:40:13 WORKER EXIT UNEXPECTED E_ERROR Uncaught Error: Call to undefined function string() in /www/code/MeNA/MeNA-Component/common/common.php:164
+Stack trace:
+#0 /www/code/MeNA/MeNA-Component/10002.php(53): common_response(10002.501, '\xE6\x8F\x92\xE5\x85\xA5\xE6\x95\xB0\xE6\x8D\xAE\xE6\x9C\x89...')
+#1 [internal function]: {closure}(Object(Workerman\Connection\TcpConnection), Array)
+#2 /www/code/MeNA/MeNA-Component/Workerman/Connection/TcpConnection.php(439): call_user_func(Object(Closure), Object(Workerman\Connection\TcpConnection), '{"email":"29708...')
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #20)
+#4 /www/code/MeNA/MeNA-Component/Workerman/Events/Select.php(251): call_user_func_array(Array, Array)
+#5 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(1463): Workerman\Events\Select->loop()
+#6 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(897): Workerman\Worker->run()
+#7 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(863): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /www/code/MeNA/ in /www/code/MeNA/MeNA-Component/common/common.php on line 164
+2016-08-13 06:40:13 worker[none:80047] exit with status 65280
+2016-08-13 06:41:27 WORKER EXIT UNEXPECTED E_ERROR Uncaught Error: Call to undefined function string() in /www/code/MeNA/MeNA-Component/common/common.php:164
+Stack trace:
+#0 /www/code/MeNA/MeNA-Component/10002.php(53): common_response(10002.501, '\xE6\x8F\x92\xE5\x85\xA5\xE6\x95\xB0\xE6\x8D\xAE\xE6\x9C\x89...')
+#1 [internal function]: {closure}(Object(Workerman\Connection\TcpConnection), Array)
+#2 /www/code/MeNA/MeNA-Component/Workerman/Connection/TcpConnection.php(439): call_user_func(Object(Closure), Object(Workerman\Connection\TcpConnection), '{"email":"29708...')
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #21)
+#4 /www/code/MeNA/MeNA-Component/Workerman/Events/Select.php(251): call_user_func_array(Array, Array)
+#5 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(1463): Workerman\Events\Select->loop()
+#6 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(897): Workerman\Worker->run()
+#7 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(863): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /www/code/MeNA/ in /www/code/MeNA/MeNA-Component/common/common.php on line 164
+2016-08-13 06:41:27 worker[none:80061] exit with status 65280
+2016-08-13 06:41:32 Workerman[10002.php] Stopping ...
+2016-08-13 06:41:32 Workerman[10002.php] has been stopped
+2016-08-13 06:41:33 Workerman[10002.php] start in DEBUG mode
+2016-08-13 06:45:55 Workerman[10002.php] Stopping ...
+2016-08-13 06:45:55 worker[none:80169] exit with status 65280
+2016-08-13 06:45:55 Workerman[10002.php] has been stopped
+2016-08-13 06:45:59 Workerman[10002.php] start in DEBUG mode
+2016-08-13 06:48:56 Workerman[10002.php] Stopping ...
+2016-08-13 06:48:56 worker[none:80476] exit with status 65280
+2016-08-13 06:48:56 Workerman[10002.php] has been stopped
+2016-08-13 06:48:57 Workerman[10002.php] start in DEBUG mode
+2016-08-13 06:55:29 Workerman[10002.php] Stopping ...
+2016-08-13 06:55:29 worker[none:80695] exit with status 65280
+2016-08-13 06:55:29 Workerman[10002.php] has been stopped
+2016-08-13 06:55:30 Workerman[10002.php] start in DEBUG mode
