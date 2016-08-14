@@ -1,4 +1,8 @@
 <?php
+require_once './common/common.php';
+
+print_r(common_decode("DJ/MmSOu4nTCDddQaJ+DhiSn0fkNG+kV"));
+die;
 //function microtime_float(){
 //
 //   list($usec, $sec) = explode(" ", microtime());
@@ -12,7 +16,6 @@
 //echo strlen(md5(microtime_float()));
 //echo date('Y-m-d H:i:s',time());
 //echo date('Y-m-d H:i:s',microtime_float());
-
 
 //function common_get_randChar($length){
 //    $str = null;
@@ -98,35 +101,35 @@
 //echo date('Y-m-d', strtotime('-16 month'));
 //echo date('Ymd','-1704182400');
 
-$arra=array(
-    'bus'=>array('data'=>111,'name'=>'11.jpg'),
-    'org'=>array('data'=>111,'name'=>'11.jpg'),
-    'taz'=>array('data'=>111,'name'=>'11.jpg'),
+// $arra=array(
+//     'bus'=>array('data'=>111,'name'=>'11.jpg'),
+//     'org'=>array('data'=>111,'name'=>'11.jpg'),
+//     'taz'=>array('data'=>111,'name'=>'11.jpg'),
 
-);
-echo "<pre>";
-echo json_encode($arra);
-print_r(json_decode(json_encode($arra),true));
-$aa='asdasdasd.jpg';
-echo explode('.',$aa)[1];
-//echo SK('121.41.5.21','10072',$data);
-//////socket请求
-function SK($host,$port,$data,$size=8192){
-    $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
-    socket_connect($socket,$host,$port);
-    $in =  json_encode($data);
-    socket_write($socket,$in,strlen($in));
-    $out = '';
-    while ($tmp = socket_read($socket, $size)) {
-        if(strlen($tmp) == 0){
-            break;
-        }else{
-            $out .= $tmp;
-        }
-    }
-    socket_close($socket);
-    return $out;
-}
+// );
+// echo "<pre>";
+// echo json_encode($arra);
+// print_r(json_decode(json_encode($arra),true));
+// $aa='asdasdasd.jpg';
+// echo explode('.',$aa)[1];
+// //echo SK('121.41.5.21','10072',$data);
+// //////socket请求
+// function SK($host,$port,$data,$size=8192){
+//     $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
+//     socket_connect($socket,$host,$port);
+//     $in =  json_encode($data);
+//     socket_write($socket,$in,strlen($in));
+//     $out = '';
+//     while ($tmp = socket_read($socket, $size)) {
+//         if(strlen($tmp) == 0){
+//             break;
+//         }else{
+//             $out .= $tmp;
+//         }
+//     }
+//     socket_close($socket);
+//     return $out;
+// }
 //$aa="923812123021312";
 //substr($aa,0,-4);
 //echo str_replace(substr($aa,0,-4),"**** **** **** ",$aa);
@@ -259,7 +262,6 @@ function SK($host,$port,$data,$size=8192){
 //echo $sql;
 //var_dump(explode('_',__CLASS__)[1]);
 
-
 //socket请求
 //function SK($host,$port,$data,$size=8192){
 //    $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
@@ -389,12 +391,9 @@ function SK($host,$port,$data,$size=8192){
 //    return $str;
 //}
 
-
-
 //$arr=array('id'=>1,'sd'=>'sdc','name'=>'jack');
 //echo count($arr);
 //echo implode(",",$arr);
-
 
 //function addFileToZip($path,$zip){
 //    $handler=opendir($path); //打开当前文件夹由$path指定。
@@ -427,31 +426,38 @@ function SK($host,$port,$data,$size=8192){
 //}
 //print_r($arr1);
 
-echo strtotime("null");
+// echo strtotime("null");
 
-//用户身份证成功写入
-//echo "123";
-//select(421081198708210032);
-function select($identity_code){
-    $redis = new Redis();
-    // 阿里云配置
-    /*
-    if ($redis->connect($_SC['redisHost'], $_SC['redisPort']) == false) {
-        return false;
-    }
-    if ($redis->auth($_SC['redisUser'] . ":" . $_SC['redisPw']) == false) {
-        return false;
-    }*/
-    // 本地配置
-    if($redis->connect('127.0.0.1', 6379) == false)
-    {
-        return false;
-    }
-    $key = (string)$identity_code;
-    $redis->select(6);
-    $arr=$redis->zRange($key,0,-1);
-    var_dump($arr);
-}
+// //用户身份证成功写入
+// //echo "123";
+// //select(421081198708210032);
+// function select($identity_code) {
+// 	$redis = new Redis();
+// 	// 阿里云配置
+// 	/*
+// 	    if ($redis->connect($_SC['redisHost'], $_SC['redisPort']) == false) {
+// 	        return false;
+// 	    }
+// 	    if ($redis->auth($_SC['redisUser'] . ":" . $_SC['redisPw']) == false) {
+// 	        return false;
+// */
+// 	// 本地配置
+// 	if ($redis->connect('127.0.0.1', 6379) == false) {
+// 		return false;
+// 	}
+// 	$key = (string) $identity_code;
+// 	$redis->select(6);
+// 	$arr = $redis->zRange($key, 0, -1);
+// 	var_dump($arr);
+// }
+
+#######################################################
+#######################################################
+######################比较吊############################
+#######################################################
+#######################################################
+#######################################################
+#######################################################
 
 /**
  * Created by PhpStorm.
@@ -462,157 +468,138 @@ function select($identity_code){
 
 //socket请求
 
-
 $host = '121.41.5.21';
 $port = '10020';
 $data = array(
-    'uuid'=>'8a40f07c81deac67498734931f48b847',
-        'bank_card_info_id'=>'5218995118881018',
+	'uuid' => '8a40f07c81deac67498734931f48b847',
+	'bank_card_info_id' => '5218995118881018',
 
 //    'bank_card_info_id'=>'6212261001030537333',
 );
-echo SK($host,$port,$data);
+echo SK($host, $port, $data);
 
+$host = '121.41.5.21';
+$port = '1002';
+$data = array(
+	'uuid' => 'ef4a586ad69d7bdda02fc3557fa4fb0b',
+	'action_type' => 'present',
+	'merchant_id' => '277',
+	'coin' => '100',
+);
+echo SK($host, $port, $data);
 
-//$host = '121.41.5.21';
-//$port = '1002';
-//$data = array(
-//    'uuid'=>'ef4a586ad69d7bdda02fc3557fa4fb0b',
-//    'action_type'=>'present',
-//    'merchant_id'=>'277',
-//    'coin'=>'100'
-//);
-//echo SK($host,$port,$data);
+$host = '121.41.5.21';
+$port = '10072';
+$data = array(
+	'phone' => '18621541350',
+	'login_type' => 'standard',
+	'login_ip' => '1.1.1.1',
+	'pwd' => '123456',
+);
+echo SK($host, $port, $data);
 
+$host = '121.41.5.21';
+$port = '10041';
+$data = array(
+	'phone' => '18672792565',
+	'sms_type' => '1',
+	'action' => 'user_registe',
+);
+echo SK($host, $port, $data);
 
-//$host = '121.41.5.21';
-//$port = '10072';
-//$data = array(
-//        'phone'=>'18621541350',
-//        'login_type'=>'standard',
-//        'login_ip'=>'1.1.1.1',
-//        'pwd'=>'123456'
-//        );
-//echo SK($host,$port,$data);
+$host = '121.41.5.21';
+$port = '10071';
+$data = array(
+	'phone' => '18621541358',
+	'pwd' => 'mimamimam',
+	'code' => '1234',
+	'channel' => 'Wechat',
+);
+echo SK($host, $port, $data);
 
-
-//$host = '121.41.5.21';
-//$port = '10041';
-//$data = array(
-//        'phone'=>'18672792565',
-//        'sms_type'=>'1',
-//        'action'=>'user_registe',
-//        );
-//echo SK($host,$port,$data);
-
-
-
-//$host = '121.41.5.21';
-//$port = '10071';
-//$data = array(
-//        'phone'=>'18621541358',
-//        'pwd'=>'mimamimam',
-//        'code'=>'1234',
-//        'channel'=>'Wechat'
-//        );
-//echo SK($host,$port,$data);
-
-function SK($host,$port,$data,$size=8192){
-    $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
-    socket_connect($socket,$host,$port);
-    $in =  json_encode($data);
-    socket_write($socket,$in,strlen($in));
-    $out = '';
-    while ($tmp = socket_read($socket, $size)) {
-        if(strlen($tmp) == 0){
-            break;
-        }else{
-            $out .= $tmp;
-        }
-    }
-    socket_close($socket);
-    return $out;
+function SK($host, $port, $data, $size = 8192) {
+	$socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
+	socket_connect($socket, $host, $port);
+	$in = json_encode($data);
+	socket_write($socket, $in, strlen($in));
+	$out = '';
+	while ($tmp = socket_read($socket, $size)) {
+		if (strlen($tmp) == 0) {
+			break;
+		} else {
+			$out .= $tmp;
+		}
+	}
+	socket_close($socket);
+	return $out;
 }
 
-
 exit;
-use Workerman\Worker;
+use OSS\Core\OssException;
 
 require_once './Workerman/Autoloader.php';
 require_once './common/common.php';
 
 use OSS\OssClient;
-use OSS\Core\OssException;
+use Workerman\Worker;
 
 require_once './common/aliyun-oss/autoload.php';
-
-
-
 
 $tcp_worker = new Worker("tcp://0.0.0.0:10048");
 
 // 启动4个进程对外提供服务
 $tcp_worker->count = 4;
 
-
 // 当客户端发来数据时
-$tcp_worker->onMessage = function($connection, $data)
-{
-    global $_SG,$_SC;
-    //配置文件 上传文件
-//    $file_path = './1.png';
-//    $file = file_get_contents($file_path);
-    $object = 'testoss/1/1.png';
-    $ossClient = new OssClient($_SC['accessKeyId'], $_SC['accessKeySecret'], $_SC['endpoint'],false);
+$tcp_worker->onMessage = function ($connection, $data) {
+	global $_SG, $_SC;
+	//配置文件 上传文件
+	//    $file_path = './1.png';
+	//    $file = file_get_contents($file_path);
+	$object = 'testoss/1/1.png';
+	$ossClient = new OssClient($_SC['accessKeyId'], $_SC['accessKeySecret'], $_SC['endpoint'], false);
 //    oss_upload($ossClient,$_SC['bucket'],$object,$file);
-    $url = getSignedUrlForGettingObject($ossClient,$_SC['bucket'],$object);
-    print_r($url);
+	$url = getSignedUrlForGettingObject($ossClient, $_SC['bucket'], $object);
+	print_r($url);
 
-
-
-
-
-    $connection->close();
+	$connection->close();
 };
-Worker::$stdoutFile = '/var/log/workerman/10048-'.date('Ym').'.log';
+Worker::$stdoutFile = '/var/log/workerman/10048-' . date('Ym') . '.log';
 // 运行worker
 Worker::runAll();
 
-
 //删除文件
-function deleteObject($ossClient, $bucket,$object)
-{
-    try{
-        $ossClient->deleteObject($bucket, $object);
-        return true;
-    } catch(OssException $e) {
-        return false;
-        return;
-    }
+function deleteObject($ossClient, $bucket, $object) {
+	try {
+		$ossClient->deleteObject($bucket, $object);
+		return true;
+	} catch (OssException $e) {
+		return false;
+		return;
+	}
 
 }
 //获取访问资源 内网地址
-function getSignedUrlForGettingObject($ossClient, $bucket,$object,$timeout=3600)
-{
-    try{
-        $signedUrl = $ossClient->signUrl($bucket, $object, $timeout);
-        return $signedUrl;
-    } catch(OssException $e) {
+function getSignedUrlForGettingObject($ossClient, $bucket, $object, $timeout = 3600) {
+	try {
+		$signedUrl = $ossClient->signUrl($bucket, $object, $timeout);
+		return $signedUrl;
+	} catch (OssException $e) {
 
-        return false;
-    }
+		return false;
+	}
 }
 //上传文件
-function oss_upload($ossClient,$bucket, $object, $file){
-    global $_SC;
-    $doesExist = $ossClient->doesBucketExist($bucket);
-    if(!$doesExist){
-        $client =$ossClient->createBucket($_SC['bucket']);
-    }
-    try{
-        $ossClient->putObject($_SC['bucket'], $object, $file);
-        return true;
-    } catch (OssException $e){
-        return false;
-    }
+function oss_upload($ossClient, $bucket, $object, $file) {
+	global $_SC;
+	$doesExist = $ossClient->doesBucketExist($bucket);
+	if (!$doesExist) {
+		$client = $ossClient->createBucket($_SC['bucket']);
+	}
+	try {
+		$ossClient->putObject($_SC['bucket'], $object, $file);
+		return true;
+	} catch (OssException $e) {
+		return false;
+	}
 }

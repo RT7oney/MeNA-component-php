@@ -4,8 +4,21 @@
  * Date: 16/8/11
  * Time: 下午5:05
  */
-error_reporting(E_ALL & ~E_NOTICE);
 include_once './common/config.inc.php';
+
+/**
+ * des解密接口发送回来的消息
+ * @param  [type] $data [description]
+ * @return [type]       [description]
+ */
+function common_decode($data) {
+	global $_CONF;
+	include_once './common/DES.php';
+	$encrypter = new DesCrypter($_CONF['Des-Key'], MCRYPT_3DES);
+	$result = $encrypter->decrypt(base64_decode($data));
+	$encrypter->close();
+	return json_decode($result, true);
+}
 
 // 是否是邮箱 by Ryan
 function is_email($email) {
@@ -149,7 +162,6 @@ function common_check_parameter($data, $parameter) {
 	foreach ($data as $key => $value) {
 		array_push($arr, $key);
 	}
-	print_r($arr);
 	$ret = array_diff($arr, $parameter);
 	if (count($ret) == 0) {
 		return ture;

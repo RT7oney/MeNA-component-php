@@ -4,6 +4,7 @@ $_CONF['dbcharset'] = 'utf8';
 //$_CONF['api_host'] = 'http://121.40.62.252/api/v1';
 $_CONF['api_host'] = 'http://10.251.241.84/api/v1';
 $_CONF['max_avatar_size'] = 5242880;
+$_CONF['Des-Key'] = "45683968";
 /*
  *  数据库配置
  */

@@ -23,6 +23,7 @@ $tcp_worker->count = 4;
 
 // 当客户端发来数据时
 $tcp_worker->onMessage = function ($connection, $data) {
+	error_reporting(E_ALL & ~E_NOTICE);
 	global $_OBJ, $_CONF;
 	// 参数列表
 	$parameter = array('email', 'password', 'name');
@@ -34,7 +35,7 @@ $tcp_worker->onMessage = function ($connection, $data) {
 			$sql = "select * from users where email = '" . $data['email'] . "' limit 1";
 			$row = $_OBJ['db']->get_row($sql);
 			if (count($row) > 0) {
-				$msg = common_response(10002.402, '该邮箱已被注册');
+				$msg = common_response(10002.403, '该邮箱已被注册');
 			} else {
 				$password = password_hash($data['password'], PASSWORD_DEFAULT);
 				$the_id = md5(uniqid($password . time()));
@@ -48,26 +49,25 @@ $tcp_worker->onMessage = function ($connection, $data) {
 					$user_profile_query = $_OBJ['db']->query($user_profile_sql);
 					if ($users_query && $user_profile_query) {
 						$_OBJ['db']->query('COMMIT');
-						$msg = common_response(10002.200, array('token' => $the_id));
+						$msg = common_response(10002.201, array('token' => $the_id));
 					} else {
-						$msg = common_response(10002.501, '插入数据有误');
+						$msg = common_response(10002.502, '插入数据有误');
 						$_OBJ['db']->query('ROLLBACK');
 					}
 				} catch (Exception $e) {
-					$msg = common_response(10002.500, '系统错误');
+					$msg = common_response(10002.501, '系统错误');
 					$_OBJ['db']->query('ROLLBACK');
 				}
 			}
 		} else {
-			$msg = common_response(10002.401, '请求失败，参数不符');
+			$msg = common_response(10002.402, '请求失败，参数不符');
 		}
 	} else {
-		$msg = common_response(10002.400, '请求失败，没有参数');
+		$msg = common_response(10002.401, '请求失败，没有参数');
 	}
-	// print_r(json_encode($msg, JSON_UNESCAPED_UNICODE));
 	$connection->send(json_encode($msg, JSON_UNESCAPED_UNICODE));
 	$connection->close();
 };
-Worker::$stdoutFile = 'log/10072-' . date('Ym') . '.log';
+Worker::$stdoutFile = 'log/10002-' . date('Ym') . '.log';
 // 运行worker
 Worker::runAll();
