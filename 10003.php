@@ -22,7 +22,7 @@ $tcp_worker->count = 4;
 
 // 当客户端发来数据时
 $tcp_worker->onMessage = function ($connection, $data) {
-	error_reporting(E_ALL & ~E_NOTICE);
+	error_reporting(E_ALL);
 	global $_OBJ, $_CONF;
 	// 参数列表
 	$parameter = array('the_id', 'password');
@@ -45,8 +45,8 @@ $tcp_worker->onMessage = function ($connection, $data) {
 					if ($row['isdev'] == 1) {
 						$msg = common_response(10003.405, '已经是开发者了');
 					} else {
-						$sql = 'update users set isdev = 1 where the_id = ' . $data['the_id'];
-						$query = $_OBJ['db']->query($users_sql);
+						$update_sql = 'update users set isdev = 1 where the_id = ' . $data['the_id'];
+						$query = $_OBJ['db']->query($update_sql);
 						if ($query) {
 							$name_sql = 'select * from user_profile where the_id = ' . $data['the_id'];
 							$name_row = $_OBJ['db']->get_row($name_sql);
