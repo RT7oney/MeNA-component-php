@@ -12,10 +12,8 @@ require_once './common/common.php';
 
 /*
  * 运行流程
- * 参数1 phone (必须)
- * 参数2 login_type (必须)
- * 参数3 pwd (必须 6<=长度<=20) authentication_token
- * 参数4 login_ip (必须)
+ * 参数1 email (必须)
+ * 参数2 password (必须 6<=长度<=20)
  */
 
 $tcp_worker = new Worker("tcp://0.0.0.0:10001");
@@ -24,127 +22,48 @@ $tcp_worker->count = 4;
 
 // 当客户端发来数据时
 $tcp_worker->onMessage = function ($connection, $data) {
-	global $_SG, $_SC;
+	error_reporting(E_ALL & ~E_NOTICE);
+	global $_OBJ, $_CONF;
+	// 参数列表
+	$parameter = array('email', 'password');
+	// 参数检查
 	$data = json_decode($data, true);
 	if ($data) {
-		if (isset($data['phone']) && is_mobile($data['phone'])) {
-			if (isset($data['login_ip'])) {
-				if (isset($data['login_type']) && in_array($data['login_type'], $login_types)) {
-					common_db_mysql_connect();
-					switch ($data['login_type']) {
-					case 'standard': //使用手机号密码登录
-						if (isset($data['pwd']) && (strlen($data['pwd']) >= 4) && (strlen($data['pwd']) <= 20)) {
-							$suffix = substr($data['phone'], 0, 4);
-							$users_table_name = 'users_' . $suffix;
-							$users_profiles_table_name = 'user_profiles_' . $suffix;
-
-							$sql = "select * from `$users_table_name` where phone = '" . $data['phone'] . "' limit 1";
-							$query = $_SG['db']->query($sql);
-							$row = $_SG['db']->fetch_array($query);
-
-							if (!isset($row['encrypted_password']) || empty($row['encrypted_password'])) {
-								$row['is_pwd_set'] = '0';
-							} else {
-								$row['is_pwd_set'] = '1';
-							}
-							if (count($row) >= 1 && is_array($row)) {
-								//判断是否存在uuid
-								if (empty($row['uuid'])) {
-									//没有uuid
-									//生成uuid
-									$uuid = md5(strtotime($row['created_at']) . $row['phone'] . rand(1000, 9999));
-									$row['uuid'] = $uuid;
-									//写入mysql
-									$sql = "update " . $users_table_name . " set uuid = '" . $row['uuid'] . "' where phone='" . $row['phone'] . "'";
-									$update_user_uuid_query = $_SG['db']->query($sql);
-									$sql1 = "update " . $users_profiles_table_name . " set uuid = '" . $row['uuid'] . "' where  phone='" . $row['phone'] . "'";
-									$update_user_profiles_uuid_query = $_SG['db']->query($sql1);
-									if ($update_user_uuid_query && $update_user_profiles_uuid_query) {
-										add_user_uuid($row['uuid'], $row['phone']);
-									}
-								} else {
-									//查找redis里有没有
-									if (get_phone($row['uuid']) == false) {
-										add_user_uuid($row['uuid'], $row['phone']);
-									}
-								}
-								if (password_verify($data['pwd'], $row['encrypted_password'])) {
-									$sql = "select `user_brithday`,IFNULL(`sex`,0) as sex,`identity_code`,`name`,IFNULL(`identity_state`,0) as identity_state,`id`,`nick_name`,`area`,IFNULL(`coin_total`,0) as coin_total,IFNULL(`is_auto_pensions`,0) as is_auto_pensions,image_file_name,identity_code,total_income,frozen_coin,total_conversions,account_state,registration_id,is_system_notice,is_coin_notice,is_pension_notice  from `$users_profiles_table_name` where uuid = '" . $row['uuid'] . "'";
-									$query = $_SG['db']->query($sql);
-									$user_info = $_SG['db']->fetch_array($query);
-
-									$check = true;
-									if (!empty($user_info['identity_code']) && !empty($user_info['name'])) {
-										$check = check_identity($user_info['identity_code'], $user_info['name'], $row['uuid'], $users_profiles_table_name);
-									}
-									if (!isset($user_info['image_file_name']) || empty($user_info['image_file_name'])) { //是否设置过头像
-										$row['is_head_portrait'] = '0'; //没有设置头像
-									} else {
-										$row['is_head_portrait'] = '1'; //有设置头像
-									}
-									if (isset($user_info['identity_code']) && !empty($user_info['identity_code'])) {
-//身份证号
-										$mosaic = (isset($stars[(strlen($user_info['identity_code']) - 2)])) ? $stars[(strlen($user_info['identity_code']) - 2)] : '****************';
-										$user_info['identity_code'] = substr($user_info['identity_code'], 0, 1) . $mosaic . substr($user_info['identity_code'], -1, 1); //截取身份证号
-									}
-									$houcui = (isset($stars[(mb_strlen($user_info['name'], 'utf-8') - 1)])) ? $stars[(mb_strlen($user_info['name'], 'utf-8') - 1)] : '';
-									$user_info['name'] = mb_substr($user_info['name'], 0, 1, 'utf-8') . $houcui;
-									//判断有没有关联过会员卡 有没有参与过全民行动 有没有添加过心愿单
-									$user_info['is_associated_members_card'] = get_activity_state($row['uuid'], 'associated_members_card'); //是否关联过会员卡.0未关联,1关联
-									$user_info['is_wish'] = get_activity_state($row['uuid'], 'wish_list'); //是否添加过心愿单.0未添加,1有添加
-									$user_info['is_merchant_info_cursor'] = get_activity_state($row['uuid'], 'merchant_info_cursor', 'id', ' '); //是否参与过全民行动录入商户.0未参与,1有参与
-									//判断是否绑定过银行卡
-									$user_info['is_bind_bank_card'] = get_activity_state($row['uuid'], 'bank_card_verify_infos'); //是否绑定过银行卡.0=未绑定,1有绑定
-
-									$result = array_merge($row, $user_info);
-
-									if ($check) {
-										$msg = array('code' => 1007201, 'msg' => '登陆成功', 'data' => $result);
-									} else {
-										$msg = array('code' => 1007202, 'msg' => '系统错误');
-									}
-									if (empty($row['first_sign_in_at'])) {
-										$sql = "update `$users_table_name` set first_sign_in_at = now() where  id = '" . $row['id'] . "'";
-										$_SG['db']->query($sql);
-									}
-									$sql = "update `$users_table_name` set last_sign_in_at = current_sign_in_at ,last_sign_in_ip = current_sign_in_ip where id = '" . $row['id'] . "'";
-									$_SG['db']->query($sql);
-									$sql = "update `$users_table_name` set sign_in_count = (sign_in_count + 1),
-                                          current_sign_in_ip = '" . $data['login_ip'] . "',current_sign_in_at = now() where id = '" . $row['id'] . "'";
-									$_SG['db']->query($sql);
-
-								} else {
-									//密码错误
-									$msg = array('code' => 1007203, 'msg' => '密码错误');
-								}
-							} else {
-								//用户不存在
-								$msg = array('code' => 1007204, 'msg' => '用户不存在');
-							}
-						} else {
-							//用户密码非法
-							$msg = array('code' => 1007205, 'msg' => '用户密码格式错误');
-						}
-						break;
-					}
-
-					$_SG['db']->close();
-				} else {
-					//登录类型非法
-					$msg = array('code' => 1007210, 'msg' => '登录类型错误');
-				}
+		if (common_check_parameter($data, $parameter)) {
+			common_db_mysqli_connect();
+			$sql = "select * from users where email = '" . $data['email'] . "' limit 1";
+			$row = $_OBJ['db']->get_row($sql);
+			if (count($row) <= 0) {
+				$msg = common_response(10001.403, '该邮箱未注册');
 			} else {
-				//登录id非法
-				$msg = array('code' => 1007211, 'msg' => '登录IP错误');
+				$password = password_hash($data['password'], PASSWORD_DEFAULT);
+				print_r($row);
+				// $the_id = md5(uniqid($password . time()));
+				// //事务处理
+				// $_OBJ['db']->query('BEGIN');
+				// $_OBJ['db']->query('SET AUTOCOMMIT=0');
+				// try {
+				// 	$users_sql = "insert into users (`email`,`password`,`the_id`)  value ('" . $data['email'] . "','" . $password . "','" . $the_id . "')";
+				// 	$users_query = $_OBJ['db']->query($users_sql);
+				// 	$user_profile_sql = "insert into user_profile (`the_id`,`name`)  value ('" . $the_id . "','" . $data['name'] . "')";
+				// 	$user_profile_query = $_OBJ['db']->query($user_profile_sql);
+				// 	if ($users_query && $user_profile_query) {
+				// 		$_OBJ['db']->query('COMMIT');
+				// 		$msg = common_response(10001.201, array('token' => $the_id));
+				// 	} else {
+				// 		$msg = common_response(10001.502, '插入数据有误');
+				// 		$_OBJ['db']->query('ROLLBACK');
+				// 	}
+				// } catch (Exception $e) {
+				// 	$msg = common_response(10001.501, '系统错误');
+				// 	$_OBJ['db']->query('ROLLBACK');
+				// }
 			}
 		} else {
-			//用户手机号非法
-			$msg = array('code' => 1007212, 'msg' => '用户手机错误');
-
+			$msg = common_response(10001.402, '请求失败，参数不符');
 		}
-
 	} else {
-		$msg = array('code' => 50072010, 'msg' => '参数不合法');
+		$msg = common_response(10001.401, '请求失败，没有参数');
 	}
 	$connection->send(json_encode($msg));
 	$connection->close();
