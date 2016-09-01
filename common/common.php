@@ -172,6 +172,6 @@ function common_check_parameter($data, $parameter) {
 /**
  * 统一response方法
  */
-function common_response($code, $data) {
-	return array('code' => (string) $code, 'data' => $data);
+function common_response($code, $msg, $data) {
+	return array('code' => (string) $code, 'msg' => $msg, 'data' => $data);
 }

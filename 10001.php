@@ -34,22 +34,22 @@ $tcp_worker->onMessage = function ($connection, $data) {
 			$sql = "select * from users where email = '" . $data['email'] . "' limit 1";
 			$row = $_OBJ['db']->get_row($sql);
 			if (count($row) <= 0) {
-				$msg = common_response(10001.403, '该邮箱未注册');
+				$msg = common_response(10001.403, '该邮箱未注册', array());
 			} else {
 				// $password = password_hash($data['password'], PASSWORD_DEFAULT);
 				$password = md5($data['password']);
 				// print_r($password);
 				if ($password !== $row['password']) {
-					$msg = common_response(10001.404, '密码不正确');
+					$msg = common_response(10001.404, '密码不正确', array());
 				} else {
-					$msg = common_response(10001.201, array('api_token' => $row['the_id']));
+					$msg = common_response(10001.201, '成功', array('api_token' => $row['the_id']));
 				}
 			}
 		} else {
-			$msg = common_response(10001.402, '请求失败，参数不符');
+			$msg = common_response(10001.402, '请求失败，参数不符', array());
 		}
 	} else {
-		$msg = common_response(10001.401, '请求失败，没有参数');
+		$msg = common_response(10001.401, '请求失败，没有参数', array());
 	}
 	$connection->send(json_encode($msg, JSON_UNESCAPED_UNICODE));
 	$connection->close();
