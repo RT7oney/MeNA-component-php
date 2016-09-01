@@ -37,27 +37,12 @@ $tcp_worker->onMessage = function ($connection, $data) {
 				$msg = common_response(10001.403, '该邮箱未注册');
 			} else {
 				$password = password_hash($data['password'], PASSWORD_DEFAULT);
-				print_r($row);
-				// $the_id = md5(uniqid($password . time()));
-				// //事务处理
-				// $_OBJ['db']->query('BEGIN');
-				// $_OBJ['db']->query('SET AUTOCOMMIT=0');
-				// try {
-				// 	$users_sql = "insert into users (`email`,`password`,`the_id`)  value ('" . $data['email'] . "','" . $password . "','" . $the_id . "')";
-				// 	$users_query = $_OBJ['db']->query($users_sql);
-				// 	$user_profile_sql = "insert into user_profile (`the_id`,`name`)  value ('" . $the_id . "','" . $data['name'] . "')";
-				// 	$user_profile_query = $_OBJ['db']->query($user_profile_sql);
-				// 	if ($users_query && $user_profile_query) {
-				// 		$_OBJ['db']->query('COMMIT');
-				// 		$msg = common_response(10001.201, array('token' => $the_id));
-				// 	} else {
-				// 		$msg = common_response(10001.502, '插入数据有误');
-				// 		$_OBJ['db']->query('ROLLBACK');
-				// 	}
-				// } catch (Exception $e) {
-				// 	$msg = common_response(10001.501, '系统错误');
-				// 	$_OBJ['db']->query('ROLLBACK');
-				// }
+				// print_r($row);
+				if ($password !== $row['password']) {
+					$msg = common_response(10001.404, '密码不正确');
+				} else {
+					$msg = common_response(10001.201, array('api_token' => $row['the_id']));
+				}
 			}
 		} else {
 			$msg = common_response(10001.402, '请求失败，参数不符');
@@ -68,7 +53,7 @@ $tcp_worker->onMessage = function ($connection, $data) {
 	$connection->send(json_encode($msg));
 	$connection->close();
 };
-Worker::$stdoutFile = '/var/log/workerman/10072-' . date('Ym') . '.log';
+Worker::$stdoutFile = 'log/10001-' . date('Ym') . '.log';
 // 运行worker
 Worker::runAll();
 
