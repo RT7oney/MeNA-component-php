@@ -28,7 +28,7 @@ class MySQLi_DB {
 
 	//析构函数：主要用来释放结果集和关闭数据库连接
 	public function __destruct() {
-		// $this->free();
+		$this->free();
 		$this->close();
 	}
 
@@ -94,7 +94,7 @@ class MySQLi_DB {
 		$this->query($sql, 1);
 		$this->fetch_mode = MYSQLI_NUM;
 		$row = $this->fetch();
-		// $this->free();
+		$this->free();
 		return $row[0];
 	}
 
@@ -110,7 +110,7 @@ class MySQLi_DB {
 		$this->query($sql, 1);
 		$this->fetch_mode = $fetch_mode;
 		$row = $this->fetch();
-		// $this->free();
+		$this->free();
 		return $row;
 	}
 
@@ -129,7 +129,7 @@ class MySQLi_DB {
 		while ($rows = $this->fetch()) {
 			$all_rows[] = $rows;
 		}
-		// $this->free();
+		$this->free();
 		return $all_rows;
 	}
 
@@ -243,7 +243,7 @@ class MySQLi_DB {
 		$this->query($sql);
 		$this->fetch_mode = $fetch_mode;
 		$row = $this->fetch();
-		// $this->free();
+		$this->free();
 		return $row;
 	}
 }
