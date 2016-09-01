@@ -63,7 +63,7 @@ $tcp_worker->onMessage = function ($connection, $data) {
 	} else {
 		$msg = common_response(10003.401, '请求失败，没有参数');
 	}
-	$connection->send(json_encode($msg));
+	$connection->send(json_encode($msg, JSON_UNESCAPED_UNICODE));
 	$connection->close();
 };
 Worker::$stdoutFile = 'log/10003-' . date('Ym') . '.log';
