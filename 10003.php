@@ -50,7 +50,7 @@ $tcp_worker->onMessage = function ($connection, $data) {
 						if ($query) {
 							$name_sql = "select * from user_profile where the_id = '" . $data['the_id'] . "'";
 							$name_row = $_OBJ['db']->get_row($name_sql);
-							$msg = common_response(10003.201, '成功', array('data' => array('api_token' => $row['the_id'], 'dev_name' => $name_row['name'])));
+							$msg = common_response(10003.201, '成功', array('api_token' => $row['the_id'], 'dev_name' => $name_row['name']));
 						} else {
 							$msg = common_response(10003.501, '服务器内部错误', array());
 						}
