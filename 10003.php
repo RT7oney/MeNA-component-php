@@ -45,10 +45,10 @@ $tcp_worker->onMessage = function ($connection, $data) {
 					if ($row['isdev'] == 1) {
 						$msg = common_response(10003.405, '已经是开发者了');
 					} else {
-						$update_sql = "UPDATE users SET isdev = 1 WHERE the_id = " . $data['the_id'];
+						$update_sql = 'update users set isdev = 1 where the_id = `' . $data['the_id'] . '`';
 						$query = $_OBJ['db']->query($update_sql);
 						if ($query) {
-							$name_sql = 'select * from user_profile where the_id = ' . $data['the_id'];
+							$name_sql = 'select * from user_profile where the_id = `' . $data['the_id'] . '`';
 							$name_row = $_OBJ['db']->get_row($name_sql);
 							$msg = common_response(10003.201, array('data' => array('api_token' => $row['the_id'], 'dev_name' => $name_row['name'])));
 						} else {
