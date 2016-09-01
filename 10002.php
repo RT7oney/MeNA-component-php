@@ -44,7 +44,7 @@ $tcp_worker->onMessage = function ($connection, $data) {
 				$_OBJ['db']->query('BEGIN');
 				$_OBJ['db']->query('SET AUTOCOMMIT=0');
 				try {
-					$users_sql = "insert into users (`email`,`password`,`name`,`the_id`)  value ('" . $data['email'] . "','" . $password . "','" . $data['name'] . "','" . $the_id . "')";
+					$users_sql = "insert into users (`email`,`password`,`the_id`)  value ('" . $data['email'] . "','" . $password . "','" . $the_id . "')";
 					$users_query = $_OBJ['db']->query($users_sql);
 					$user_profile_sql = "insert into user_profile (`the_id`,`name`)  value ('" . $the_id . "','" . $data['name'] . "')";
 					$user_profile_query = $_OBJ['db']->query($user_profile_sql);

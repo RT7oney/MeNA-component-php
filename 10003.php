@@ -1,0 +1,65 @@
+<?php
+/**
+ * Date: 16/8/11
+ * Time: pm 5:16
+ */
+use Workerman\Worker;
+
+require_once './Workerman/Autoloader.php';
+require_once './common/common.php';
+
+//用户登录
+
+/*
+ * 运行流程
+ * 参数1 email (必须)
+ * 参数2 password (必须 6<=长度<=20)
+ */
+
+$tcp_worker = new Worker("tcp://0.0.0.0:10001");
+// 启动4个进程对外提供服务
+$tcp_worker->count = 4;
+
+// 当客户端发来数据时
+$tcp_worker->onMessage = function ($connection, $data) {
+	error_reporting(E_ALL & ~E_NOTICE);
+	global $_OBJ, $_CONF;
+	// 参数列表
+	$parameter = array('the_id', 'password');
+	// 参数检查
+	$data = json_decode($data, true);
+	if ($data) {
+		if (common_check_parameter($data, $parameter)) {
+			common_db_mysqli_connect();
+			$sql = "select * from users where the_id = '" . $data['the_id'] . "' limit 1";
+			$row = $_OBJ['db']->get_row($sql);
+			if (count($row) <= 0) {
+				$msg = common_response(10001.403, '未查询到相关信息');
+			} else {
+				// $password = password_hash($data['password'], PASSWORD_DEFAULT);
+				$password = md5($data['password']);
+				// print_r($password);
+				if ($password !== $row['password']) {
+					$msg = common_response(10001.404, '密码不正确');
+				} else {
+					$sql = 'update users set isdev = 1 where the_id = ' . $data['the_id'];
+					$query = $_OBJ['db']->query($users_sql);
+					if ($query) {
+						$msg = common_response(10001.201, '成为开发者成功');
+					} else {
+						$msg = common_response(10001.501, '服务器内部错误');
+					}
+				}
+			}
+		} else {
+			$msg = common_response(10001.402, '请求失败，参数不符');
+		}
+	} else {
+		$msg = common_response(10001.401, '请求失败，没有参数');
+	}
+	$connection->send(json_encode($msg));
+	$connection->close();
+};
+Worker::$stdoutFile = 'log/10001-' . date('Ym') . '.log';
+// 运行worker
+Worker::runAll();
