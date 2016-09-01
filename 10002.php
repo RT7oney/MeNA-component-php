@@ -35,7 +35,7 @@ $tcp_worker->onMessage = function ($connection, $data) {
 			$sql = "select * from users where email = '" . $data['email'] . "' limit 1";
 			$row = $_OBJ['db']->get_row($sql);
 			if (count($row) > 0) {
-				$msg = common_response(10002.403, '该邮箱已被注册', array());
+				$msg = common_response(10002.403, '该邮箱已被注册', null);
 			} else {
 				// $password = password_hash($data['password'], PASSWORD_DEFAULT);
 				$password = md5($data['password']);
@@ -52,19 +52,19 @@ $tcp_worker->onMessage = function ($connection, $data) {
 						$_OBJ['db']->query('COMMIT');
 						$msg = common_response(10002.201, '成功', array('token' => $the_id));
 					} else {
-						$msg = common_response(10002.502, '插入数据有误', array());
+						$msg = common_response(10002.502, '插入数据有误', null);
 						$_OBJ['db']->query('ROLLBACK');
 					}
 				} catch (Exception $e) {
-					$msg = common_response(10002.501, '系统错误', array());
+					$msg = common_response(10002.501, '系统错误', null);
 					$_OBJ['db']->query('ROLLBACK');
 				}
 			}
 		} else {
-			$msg = common_response(10002.402, '请求失败，参数不符', array());
+			$msg = common_response(10002.402, '请求失败，参数不符', null);
 		}
 	} else {
-		$msg = common_response(10002.401, '请求失败，没有参数', array());
+		$msg = common_response(10002.401, '请求失败，没有参数', null);
 	}
 	$connection->send(json_encode($msg, JSON_UNESCAPED_UNICODE));
 	$connection->close();
