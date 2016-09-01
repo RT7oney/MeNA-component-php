@@ -37,13 +37,14 @@ $tcp_worker->onMessage = function ($connection, $data) {
 			if (count($row) > 0) {
 				$msg = common_response(10002.403, '该邮箱已被注册');
 			} else {
-				$password = password_hash($data['password'], PASSWORD_DEFAULT);
+				// $password = password_hash($data['password'], PASSWORD_DEFAULT);
+				$password = md5($data['password']);
 				$the_id = md5(uniqid($password . time()));
 				//事务处理
 				$_OBJ['db']->query('BEGIN');
 				$_OBJ['db']->query('SET AUTOCOMMIT=0');
 				try {
-					$users_sql = "insert into users (`email`,`password`,`the_id`)  value ('" . $data['email'] . "','" . $password . "','" . $the_id . "')";
+					$users_sql = "insert into users (`email`,`password`,`name`,`the_id`)  value ('" . $data['email'] . "','" . $password . "','" . $data['name'] . "','" . $the_id . "')";
 					$users_query = $_OBJ['db']->query($users_sql);
 					$user_profile_sql = "insert into user_profile (`the_id`,`name`)  value ('" . $the_id . "','" . $data['name'] . "')";
 					$user_profile_query = $_OBJ['db']->query($user_profile_sql);

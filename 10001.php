@@ -36,8 +36,9 @@ $tcp_worker->onMessage = function ($connection, $data) {
 			if (count($row) <= 0) {
 				$msg = common_response(10001.403, '该邮箱未注册');
 			} else {
-				$password = password_hash($data['password'], PASSWORD_DEFAULT);
-				// print_r($row);
+				// $password = password_hash($data['password'], PASSWORD_DEFAULT);
+				$password = md5($data['password']);
+				// print_r($password);
 				if ($password !== $row['password']) {
 					$msg = common_response(10001.404, '密码不正确');
 				} else {
