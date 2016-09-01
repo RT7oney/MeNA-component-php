@@ -42,12 +42,18 @@ $tcp_worker->onMessage = function ($connection, $data) {
 				if ($password !== $row['password']) {
 					$msg = common_response(10003.404, '密码不正确');
 				} else {
-					$sql = 'update users set isdev = 1 where the_id = ' . $data['the_id'];
-					$query = $_OBJ['db']->query($users_sql);
-					if ($query) {
-						$msg = common_response(10003.201, '成为开发者成功');
+					if ($row['isdev'] == 1) {
+						$msg = common_response(10003.405, '已经是开发者了');
 					} else {
-						$msg = common_response(10003.501, '服务器内部错误');
+						$sql = 'update users set isdev = 1 where the_id = ' . $data['the_id'];
+						$query = $_OBJ['db']->query($users_sql);
+						if ($query) {
+							$name_sql = 'select * from user_profile where the_id = ' . $data['the_id'];
+							$name_row = $_OBJ['db']->get_row($name_sql);
+							$msg = common_response(10003.201, array('data' => array('api_token' => $row['the_id'], 'dev_name' => $name_row['name'])));
+						} else {
+							$msg = common_response(10003.501, '服务器内部错误');
+						}
 					}
 				}
 			}
