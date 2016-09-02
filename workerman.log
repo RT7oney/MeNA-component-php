@@ -217,3 +217,171 @@ Stack trace:
 2016-08-14 11:22:35 Workerman[10002.php] start in DEBUG mode
 2016-08-14 14:28:34 Workerman[10002.php] Stopping ...
 2016-08-14 14:28:34 Workerman[10002.php] has been stopped
+2016-09-02 06:34:42 Workerman[10004.php] start in DEBUG mode
+2016-09-02 06:34:49 WORKER EXIT UNEXPECTED 
+2016-09-02 06:34:49 worker[none:90302] exit with status 65280
+2016-09-02 06:37:23 Workerman[10004.php] Stopping ...
+2016-09-02 06:37:23 Workerman[10004.php] has been stopped
+2016-09-02 06:37:24 Workerman[10004.php] start in DEBUG mode
+2016-09-02 06:37:27 WORKER EXIT UNEXPECTED 
+2016-09-02 06:40:01 Workerman[10004.php] Stopping ...
+2016-09-02 06:40:01 Workerman[10004.php] has been stopped
+2016-09-02 06:40:02 Workerman[10004.php] start in DEBUG mode
+2016-09-02 06:43:01 Workerman[10004.php] Stopping ...
+2016-09-02 06:43:01 Workerman[10004.php] has been stopped
+2016-09-02 06:43:02 Workerman[10004.php] start in DEBUG mode
+2016-09-02 06:43:32 Workerman[10004.php] Stopping ...
+2016-09-02 06:43:32 Workerman[10004.php] has been stopped
+2016-09-02 06:58:13 Workerman[10004.php] start in DEBUG mode
+2016-09-02 06:59:35 Workerman[10004.php] Stopping ...
+2016-09-02 06:59:35 Workerman[10004.php] has been stopped
+2016-09-02 06:59:36 Workerman[10004.php] start in DEBUG mode
+2016-09-02 07:00:34 Workerman[10004.php] Stopping ...
+2016-09-02 07:00:34 Workerman[10004.php] has been stopped
+2016-09-02 07:00:49 Workerman[10004.php] start in DEBUG mode
+2016-09-02 07:07:40 Workerman[10004.php] Stopping ...
+2016-09-02 07:07:40 Workerman[10004.php] has been stopped
+2016-09-02 07:07:41 Workerman[10004.php] start in DEBUG mode
+2016-09-02 07:07:45 Workerman[10004.php] Stopping ...
+2016-09-02 07:07:45 Workerman[10004.php] has been stopped
+2016-09-02 07:14:15 Workerman[10004.php] start in DEBUG mode
+2016-09-02 07:16:54 Workerman[10004.php] Stopping ...
+2016-09-02 07:16:54 Workerman[10004.php] has been stopped
+2016-09-02 07:16:56 Workerman[10004.php] start in DEBUG mode
+2016-09-02 07:17:18 Workerman[10004.php] Stopping ...
+2016-09-02 07:17:18 Workerman[10004.php] has been stopped
+2016-09-02 07:21:14 Workerman[10004.php] start in DEBUG mode
+2016-09-02 07:28:46 Workerman[10004.php] Stopping ...
+2016-09-02 07:28:46 Workerman[10004.php] has been stopped
+2016-09-02 07:29:15 Workerman[10004.php] start in DEBUG mode
+2016-09-02 07:31:20 Workerman[10004.php] Stopping ...
+2016-09-02 07:31:20 Workerman[10004.php] has been stopped
+2016-09-02 07:31:20 Workerman[10004.php] start in DEBUG mode
+2016-09-02 07:32:30 Workerman[10004.php] Stopping ...
+2016-09-02 07:32:30 Workerman[10004.php] has been stopped
+2016-09-02 07:32:32 Workerman[10004.php] start in DEBUG mode
+2016-09-02 07:33:00 Workerman[10004.php] Stopping ...
+2016-09-02 07:33:00 Workerman[10004.php] has been stopped
+2016-09-02 07:33:06 Workerman[10004.php] start in DEBUG mode
+2016-09-02 07:33:07 Workerman[10004.php] Stopping ...
+2016-09-02 07:33:07 Workerman[10004.php] has been stopped
+2016-09-02 07:33:41 Workerman[10004.php] start in DEBUG mode
+2016-09-02 07:34:40 Workerman[10004.php] Stopping ...
+2016-09-02 07:34:40 Workerman[10004.php] has been stopped
+2016-09-02 07:38:25 Workerman[10004.php] start in DEBUG mode
+2016-09-02 07:38:41 Workerman[10004.php] Stopping ...
+2016-09-02 07:38:41 Workerman[10004.php] has been stopped
+2016-09-02 07:43:24 Workerman[10004.php] start in DEBUG mode
+2016-09-02 07:43:35 Workerman[10004.php] Stopping ...
+2016-09-02 07:43:35 Workerman[10004.php] has been stopped
+2016-09-02 07:49:22 Workerman[10004.php] start in DEBUG mode
+2016-09-02 07:49:28 Workerman[10004.php] Stopping ...
+2016-09-02 07:49:28 Workerman[10004.php] has been stopped
+2016-09-02 07:52:02 Workerman[10004.php] start in DEBUG mode
+2016-09-02 07:52:11 WORKER EXIT UNEXPECTED 
+2016-09-02 07:55:21 Workerman[10004.php] Stopping ...
+2016-09-02 07:55:21 Workerman[10004.php] has been stopped
+2016-09-02 07:55:21 Workerman[10004.php] start in DEBUG mode
+2016-09-02 07:55:43 Workerman[10004.php] Stopping ...
+2016-09-02 07:55:43 Workerman[10004.php] has been stopped
+2016-09-02 07:56:03 Workerman[10004.php] start in DEBUG mode
+2016-09-02 07:58:14 Workerman[10004.php] Stopping ...
+2016-09-02 07:58:14 Workerman[10004.php] has been stopped
+2016-09-02 08:00:00 Workerman[10004.php] start in DEBUG mode
+2016-09-02 08:00:16 Workerman[10004.php] Stopping ...
+2016-09-02 08:00:16 Workerman[10004.php] has been stopped
+2016-09-02 08:01:31 Workerman[10004.php] start in DEBUG mode
+2016-09-02 08:02:22 Workerman[10004.php] Stopping ...
+2016-09-02 08:02:22 Workerman[10004.php] has been stopped
+2016-09-02 08:02:46 Workerman[10004.php] start in DEBUG mode
+2016-09-02 08:02:50 WORKER EXIT UNEXPECTED E_ERROR Uncaught Error: Call to undefined function ereg() in /www/code/MeNA/MeNA-Component/common/Email.php:424
+Stack trace:
+#0 /www/code/MeNA/MeNA-Component/common/Email.php(65): smtp->strip_comment('664504017@qq.co...')
+#1 /www/code/MeNA/MeNA-Component/common/common.php(197): smtp->sendmail('koyo@lehu.io', '664504017@qq.co...', 'MeNA\xE5\xBF\x98\xE8\xAE\xB0\xE5\xAF\x86\xE7\xA0...', '<h1>test</h1>', 'HTML')
+#2 /www/code/MeNA/MeNA-Component/10004.php(50): common_sendmail('koyo@lehu.io')
+#3 [internal function]: {closure}(Object(Workerman\Connection\TcpConnection), Array)
+#4 /www/code/MeNA/MeNA-Component/Workerman/Connection/TcpConnection.php(439): call_user_func(Object(Closure), Object(Workerman\Connection\TcpConnection), '{"email":"koyo@...')
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #20)
+#6 /www/code/MeNA/MeNA-Component/Workerman/Events/Select.php(251): call_user_func_array(Array, Array)
+#7 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(1463): Workerman\Events\Select->loop( in /www/code/MeNA/MeNA-Component/common/Email.php on line 424
+2016-09-02 08:02:50 worker[none:96797] exit with status 65280
+2016-09-02 08:04:12 Workerman[10004.php] Stopping ...
+2016-09-02 08:04:12 Workerman[10004.php] has been stopped
+2016-09-02 08:04:13 Workerman[10004.php] start in DEBUG mode
+2016-09-02 08:04:44 WORKER EXIT UNEXPECTED E_ERROR Uncaught Error: Call to undefined function ereg() in /www/code/MeNA/MeNA-Component/common/Email.php:396
+Stack trace:
+#0 /www/code/MeNA/MeNA-Component/common/Email.php(59): MySmtp->strip_comment('664504017@qq.co...')
+#1 /www/code/MeNA/MeNA-Component/common/common.php(197): MySmtp->sendmail('koyo@lehu.io', '664504017@qq.co...', 'MeNA\xE5\xBF\x98\xE8\xAE\xB0\xE5\xAF\x86\xE7\xA0...', '<h1>test</h1>', 'HTML')
+#2 /www/code/MeNA/MeNA-Component/10004.php(50): common_sendmail('koyo@lehu.io')
+#3 [internal function]: {closure}(Object(Workerman\Connection\TcpConnection), Array)
+#4 /www/code/MeNA/MeNA-Component/Workerman/Connection/TcpConnection.php(439): call_user_func(Object(Closure), Object(Workerman\Connection\TcpConnection), '{"email":"koyo@...')
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #20)
+#6 /www/code/MeNA/MeNA-Component/Workerman/Events/Select.php(251): call_user_func_array(Array, Array)
+#7 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(1463): Workerman\Events\Select->l in /www/code/MeNA/MeNA-Component/common/Email.php on line 396
+2016-09-02 08:04:44 worker[none:96974] exit with status 65280
+2016-09-02 08:08:43 Workerman[10004.php] Stopping ...
+2016-09-02 08:08:43 Workerman[10004.php] has been stopped
+2016-09-02 08:08:48 Workerman[10004.php] start in DEBUG mode
+2016-09-02 08:09:24 Workerman[10004.php] Stopping ...
+2016-09-02 08:09:24 Workerman[10004.php] has been stopped
+2016-09-02 08:16:04 Workerman[10004.php] start in DEBUG mode
+2016-09-02 08:16:12 WORKER EXIT UNEXPECTED 
+2016-09-02 08:16:40 Workerman[10004.php] Stopping ...
+2016-09-02 08:16:40 Workerman[10004.php] has been stopped
+2016-09-02 08:16:41 Workerman[10004.php] start in DEBUG mode
+2016-09-02 08:16:44 WORKER EXIT UNEXPECTED 
+2016-09-02 08:18:04 Workerman[10004.php] Stopping ...
+2016-09-02 08:18:04 Workerman[10004.php] has been stopped
+2016-09-02 08:18:06 Workerman[10004.php] start in DEBUG mode
+2016-09-02 08:18:13 WORKER EXIT UNEXPECTED 
+2016-09-02 08:19:24 Workerman[10004.php] Stopping ...
+2016-09-02 08:19:24 Workerman[10004.php] has been stopped
+2016-09-02 08:19:26 Workerman[10004.php] start in DEBUG mode
+2016-09-02 08:19:30 WORKER EXIT UNEXPECTED 
+2016-09-02 08:22:05 Workerman[10004.php] Stopping ...
+2016-09-02 08:22:05 Workerman[10004.php] has been stopped
+2016-09-02 08:22:06 Workerman[10004.php] start in DEBUG mode
+2016-09-02 08:22:35 WORKER EXIT UNEXPECTED 
+2016-09-02 08:25:06 Workerman[10004.php] Stopping ...
+2016-09-02 08:25:06 Workerman[10004.php] has been stopped
+2016-09-02 08:25:07 Workerman[10004.php] start in DEBUG mode
+2016-09-02 08:25:46 Workerman[10004.php] Stopping ...
+2016-09-02 08:25:46 Workerman[10004.php] has been stopped
+2016-09-02 08:25:47 Workerman[10004.php] start in DEBUG mode
+2016-09-02 08:26:24 Workerman[10004.php] Stopping ...
+2016-09-02 08:26:24 Workerman[10004.php] has been stopped
+2016-09-02 11:03:31 Workerman[10004.php] start in DEBUG mode
+2016-09-02 11:04:09 WORKER EXIT UNEXPECTED E_COMPILE_ERROR Cannot redeclare common_log() (previously declared in /www/code/MeNA/MeNA-Component/common/common.php:201) in /www/code/MeNA/MeNA-Component/common/Email.php on line 452
+2016-09-02 11:04:09 worker[none:12232] exit with status 65280
+2016-09-02 11:05:03 Workerman[10004.php] Stopping ...
+2016-09-02 11:05:03 Workerman[10004.php] has been stopped
+2016-09-02 11:05:04 Workerman[10004.php] start in DEBUG mode
+2016-09-02 11:05:06 WORKER EXIT UNEXPECTED E_ERROR Uncaught Error: Call to undefined function mail_common_log() in /www/code/MeNA/MeNA-Component/common/Email.php:119
+Stack trace:
+#0 /www/code/MeNA/MeNA-Component/common/common.php(187): MySendMail->setReceiver('297085213@qq.co...')
+#1 /www/code/MeNA/MeNA-Component/10004.php(57): common_sendmail('297085213@qq.co...', 'fe0ed700f2bf2fa...')
+#2 [internal function]: {closure}(Object(Workerman\Connection\TcpConnection), Array)
+#3 /www/code/MeNA/MeNA-Component/Workerman/Connection/TcpConnection.php(439): call_user_func(Object(Closure), Object(Workerman\Connection\TcpConnection), '{"email":"29708...')
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #20)
+#5 /www/code/MeNA/MeNA-Component/Workerman/Events/Select.php(251): call_user_func_array(Array, Array)
+#6 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(1463): Workerman\Events\Select->loop()
+#7 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(897): Workerman\Worker->run()
+#8 /www/code/MeNA/MeNA-Component/Workerman/Worker.php(863): in /www/code/MeNA/MeNA-Component/common/Email.php on line 119
+2016-09-02 11:05:06 worker[none:12427] exit with status 65280
+2016-09-02 11:05:32 Workerman[10004.php] Stopping ...
+2016-09-02 11:05:32 Workerman[10004.php] has been stopped
+2016-09-02 11:05:33 Workerman[10004.php] start in DEBUG mode
+2016-09-02 11:08:18 Workerman[10004.php] Stopping ...
+2016-09-02 11:08:18 Workerman[10004.php] has been stopped
+2016-09-02 11:08:20 Workerman[10004.php] start in DEBUG mode
+2016-09-02 11:09:00 Workerman[10004.php] Stopping ...
+2016-09-02 11:09:00 Workerman[10004.php] has been stopped
+2016-09-02 11:09:01 Workerman[10004.php] start in DEBUG mode
+2016-09-02 11:15:58 Workerman[10004.php] Stopping ...
+2016-09-02 11:15:58 Workerman[10004.php] has been stopped
+2016-09-02 11:15:59 Workerman[10004.php] start in DEBUG mode
+2016-09-02 11:21:16 Workerman[10004.php] Stopping ...
+2016-09-02 11:21:16 Workerman[10004.php] has been stopped
+2016-09-02 11:21:17 Workerman[10004.php] start in DEBUG mode
+2016-09-02 11:32:09 Workerman[10004.php] Stopping ...
+2016-09-02 11:32:09 Workerman[10004.php] has been stopped

@@ -8,7 +8,7 @@ use Workerman\Worker;
 require_once './Workerman/Autoloader.php';
 require_once './common/common.php';
 
-//开发者登录
+//开发者注册
 
 /*
  * 运行流程

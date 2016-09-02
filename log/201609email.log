@@ -1,0 +1,172 @@
+【2016/09/02 11:09:04】===297085213@qq.com===
+【2016/09/02 11:09:05】Send command:HELO sendmail
+,expected code:250
+【2016/09/02 11:09:05】response:250 OK
+【2016/09/02 11:09:05】Send command:AUTH LOGIN
+,expected code:334
+【2016/09/02 11:09:05】response:334 dXNlcm5hbWU6
+【2016/09/02 11:09:05】Send command:eGlhb3F1ZXhpbmcxNjNAMTYzLmNvbQ==
+,expected code:334
+【2016/09/02 11:09:05】response:334 UGFzc3dvcmQ6
+【2016/09/02 11:09:05】Send command:MTIzcXdlYXNkenhj
+,expected code:235
+【2016/09/02 11:09:05】response:235 Authentication successful
+【2016/09/02 11:09:05】Send command:MAIL FROM:<xiaoquexing163@163.com>
+,expected code:250
+【2016/09/02 11:09:05】response:250 Mail OK
+【2016/09/02 11:09:05】Send command:RCPT TO: <297085213@qq.com>
+,expected code:250
+【2016/09/02 11:09:05】response:250 Mail OK
+【2016/09/02 11:09:05】Send command:DATA
+,expected code:354
+【2016/09/02 11:09:05】response:354 End data with <CR><LF>.<CR><LF>
+【2016/09/02 11:09:05】Send command:FROM: test<xiaoquexing163@163.com>
+TO: <297085213@qq.com>
+Subject: MeNA忘记密码
+Content-Type: multipart/alternative;
+	boundary="----=_Part_83d097391ab817b0fd2aae3e25dea76957c941b065078"
+MIME-Version: 1.0
+
+------=_Part_83d097391ab817b0fd2aae3e25dea76957c941b065078
+Content-Type:text/html; charset=utf-8
+Content-Transfer-Encoding: base64
+
+Mjk3MDg1MjEzQHFxLmNvbWFhNDQ2ZGI4YTI0MjEyM2RmYWI4MjljNTEwZWU2ODQyYTQ3ZDg5OTU=
+------=_Part_83d097391ab817b0fd2aae3e25dea76957c941b065078
+
+.
+,expected code:250
+【2016/09/02 11:09:05】response:250 Mail OK queued as smtp9,DcCowABX0kywQclXeMJIAA--.21793S2 1472807345
+【2016/09/02 11:09:05】Send command:QUIT
+,expected code:221
+【2016/09/02 11:09:05】response:221 Bye
+【2016/09/02 11:09:05】Mail OK!
+【2016/09/02 11:16:02】===297085213@qq.com===
+【2016/09/02 11:16:04】Send command:HELO sendmail
+,expected code:250
+【2016/09/02 11:16:04】response:250 OK
+【2016/09/02 11:16:04】Send command:AUTH LOGIN
+,expected code:334
+【2016/09/02 11:16:04】response:334 dXNlcm5hbWU6
+【2016/09/02 11:16:04】Send command:eGlhb3F1ZXhpbmcxNjNAMTYzLmNvbQ==
+,expected code:334
+【2016/09/02 11:16:04】response:334 UGFzc3dvcmQ6
+【2016/09/02 11:16:04】Send command:MTIzcXdlYXNkenhj
+,expected code:235
+【2016/09/02 11:16:04】response:235 Authentication successful
+【2016/09/02 11:16:04】Send command:MAIL FROM:<xiaoquexing163@163.com>
+,expected code:250
+【2016/09/02 11:16:04】response:250 Mail OK
+【2016/09/02 11:16:04】Send command:RCPT TO: <297085213@qq.com>
+,expected code:250
+【2016/09/02 11:16:04】response:250 Mail OK
+【2016/09/02 11:16:04】Send command:DATA
+,expected code:354
+【2016/09/02 11:16:04】response:354 End data with <CR><LF>.<CR><LF>
+【2016/09/02 11:16:04】Send command:FROM: test<xiaoquexing163@163.com>
+TO: <297085213@qq.com>
+Subject: MeNA忘记密码
+Content-Type: multipart/alternative;
+	boundary="----=_Part_12941ac7276a76236bc1107e380a448957c94352e5cb9"
+MIME-Version: 1.0
+
+------=_Part_12941ac7276a76236bc1107e380a448957c94352e5cb9
+Content-Type:text/html; charset=utf-8
+Content-Transfer-Encoding: base64
+
+PGRpdiBzdHlsZT0ibWFyZ2luOjAgYXV0bzt3aWR0aDo4MCU7aGVpZ2h0OjEwMCU7Ij48ZGl2IHN0eWxlPSJtYXJnaW46MyUgYXV0bzt3aWR0aDo4MCU7aGVpZ2h0OjgwJTtib3JkZXI6MTBweCBzb2xpZCAjMDBiY2Q0O2JvcmRlci1zdHlsZTpvdXRzZXQ7YmFja2dyb3VuZC1pbWFnZTp1cmwoJ2h0dHA6Ly9pbWcxLjNsaWFuLmNvbS8yMDE1L3cyLzM0L2QvNjQuanBnJykiPjxkaXYgc3R5bGU9Im1hcmdpbjoxMCUgYXV0bzt3aWR0aDo4MCU7aGVpZ2h0OjgwJTtiYWNrZ3JvdW5kLWNvbG9yOiNmZmY5YzQ7ZmlsdGVyOkFscGhhKE9wYWNpdHk9MTApOy1tb3otb3BhY2l0eTowLjU7b3BhY2l0eTowLjU7Ij48ZGl2IHN0eWxlPSJwYWRkaW5nOiAxMCU7d2lkdGg6ODAlO2hlaWdodDo4MCU7Zm9udDozMHB4O2ZvbnQtd2VpZ2h0OmJvbGQ7bGluZS1oZWlnaHQ6MS41OyI+5L2g5aW977yM5oKo55qETWVOQei0puWPtzI5NzA4NTIxM0BxcS5jb23mraPlnKjkv67mlLnlr4bnoIHvvIzor7fngrnlh7vku6XkuIvpk77mjqXkv67mlLnlr4bnoIHvvIjmnInmlYjmnJ8z5aSp77yJPHAgc3R5bGU9InRleHQtYWxpZ246Y2VudGVyIj48YSBocmVmPSJodHRwczovL3d3dy5iYWlkdS5jb20vcz93ZD1jZjQ5NzM3OTIxMDQxNmM2MzdkNTk1ZTk1M2RjNjA0YzRkOTczOTJjIj7kv67mlLnlr4bnoIE8L2E+PC9wPuWmguaenOS4jeaYr+aCqOacrOS6uuaTjeS9nO+8jOivt+W/veeVpeatpOmCruS7tjwvZGl2PjwvZGl2PjwvZGl2PjwvZGl2Pg==
+------=_Part_12941ac7276a76236bc1107e380a448957c94352e5cb9
+
+.
+,expected code:250
+【2016/09/02 11:16:05】response:250 Mail OK queued as smtp9,DcCowAC3Tk9TQ8lXhwZJAA--.21242S2 1472807765
+【2016/09/02 11:16:05】Send command:QUIT
+,expected code:221
+【2016/09/02 11:16:05】response:221 Bye
+【2016/09/02 11:16:05】Mail OK!
+【2016/09/02 11:21:21】===297085213@qq.com===
+【2016/09/02 11:21:21】Send command:HELO sendmail
+,expected code:250
+【2016/09/02 11:21:21】response:250 OK
+【2016/09/02 11:21:21】Send command:AUTH LOGIN
+,expected code:334
+【2016/09/02 11:21:21】response:334 dXNlcm5hbWU6
+【2016/09/02 11:21:21】Send command:eGlhb3F1ZXhpbmcxNjNAMTYzLmNvbQ==
+,expected code:334
+【2016/09/02 11:21:22】response:334 UGFzc3dvcmQ6
+【2016/09/02 11:21:22】Send command:MTIzcXdlYXNkenhj
+,expected code:235
+【2016/09/02 11:21:22】response:235 Authentication successful
+【2016/09/02 11:21:22】Send command:MAIL FROM:<xiaoquexing163@163.com>
+,expected code:250
+【2016/09/02 11:21:22】response:250 Mail OK
+【2016/09/02 11:21:22】Send command:RCPT TO: <297085213@qq.com>
+,expected code:250
+【2016/09/02 11:21:22】response:250 Mail OK
+【2016/09/02 11:21:22】Send command:DATA
+,expected code:354
+【2016/09/02 11:21:23】response:354 End data with <CR><LF>.<CR><LF>
+【2016/09/02 11:21:23】Send command:FROM: test<xiaoquexing163@163.com>
+TO: <297085213@qq.com>
+Subject: MeNA忘记密码
+Content-Type: multipart/alternative;
+	boundary="----=_Part_bc0691e71b220fd125bbd169135927c757c944917b6c1"
+MIME-Version: 1.0
+
+------=_Part_bc0691e71b220fd125bbd169135927c757c944917b6c1
+Content-Type:text/html; charset=utf-8
+Content-Transfer-Encoding: base64
+
+PGRpdiBzdHlsZT0ibWFyZ2luOjAgYXV0bzt3aWR0aDo4MCU7aGVpZ2h0OjEwMCU7Ij48ZGl2IHN0eWxlPSJtYXJnaW46MyUgYXV0bzt3aWR0aDo4MCU7aGVpZ2h0OjgwJTtib3JkZXI6MTBweCBzb2xpZCAjMDBiY2Q0O2JvcmRlci1zdHlsZTpvdXRzZXQ7YmFja2dyb3VuZC1pbWFnZTp1cmwoaHR0cDovL2ltZzEuM2xpYW4uY29tLzIwMTUvdzIvMzQvZC82NC5qcGcpIj48ZGl2IHN0eWxlPSJtYXJnaW46MTAlIGF1dG87d2lkdGg6ODAlO2hlaWdodDo4MCU7YmFja2dyb3VuZC1jb2xvcjojZmZmOWM0O2ZpbHRlcjpBbHBoYShPcGFjaXR5PTEwKTstbW96LW9wYWNpdHk6MC41O29wYWNpdHk6MC41OyI+PGRpdiBzdHlsZT0icGFkZGluZzogMTAlO3dpZHRoOjgwJTtoZWlnaHQ6ODAlO2ZvbnQ6MzBweDtmb250LXdlaWdodDpib2xkO2xpbmUtaGVpZ2h0OjEuNTsiPuS9oOWlve+8jOaCqOeahE1lTkHotKblj7cyOTcwODUyMTNAcXEuY29t5q2j5Zyo5L+u5pS55a+G56CB77yM6K+354K55Ye75Lul5LiL6ZO+5o6l5L+u5pS55a+G56CB77yI5pyJ5pWI5pyfM+Wkqe+8iTxwIHN0eWxlPSJ0ZXh0LWFsaWduOmNlbnRlciI+PGEgaHJlZj0iaHR0cHM6Ly93d3cuYmFpZHUuY29tL3M/d2Q9ZWRjNjQxZDQ3NmFkOTYyODkyOTFmNWFhZjQ5ZDZiMzM5YTJmYzZmNyI+5L+u5pS55a+G56CBPC9hPjwvcD7lpoLmnpzkuI3mmK/mgqjmnKzkurrmk43kvZzvvIzor7flv73nlaXmraTpgq7ku7Y8L2Rpdj48L2Rpdj48L2Rpdj48L2Rpdj4=
+------=_Part_bc0691e71b220fd125bbd169135927c757c944917b6c1
+
+.
+,expected code:250
+【2016/09/02 11:21:24】response:250 Mail OK queued as smtp9,DcCowAD3XE6RRMlX6EZJAA--.21720S2 1472808084
+【2016/09/02 11:21:24】Send command:QUIT
+,expected code:221
+【2016/09/02 11:21:24】response:221 Bye
+【2016/09/02 11:21:24】Mail OK!
+【2016/09/02 11:25:20】===297085213@qq.com===
+【2016/09/02 11:25:20】Send command:HELO sendmail
+,expected code:250
+【2016/09/02 11:25:20】response:250 OK
+【2016/09/02 11:25:20】Send command:AUTH LOGIN
+,expected code:334
+【2016/09/02 11:25:20】response:334 dXNlcm5hbWU6
+【2016/09/02 11:25:20】Send command:eGlhb3F1ZXhpbmcxNjNAMTYzLmNvbQ==
+,expected code:334
+【2016/09/02 11:25:20】response:334 UGFzc3dvcmQ6
+【2016/09/02 11:25:20】Send command:MTIzcXdlYXNkenhj
+,expected code:235
+【2016/09/02 11:25:20】response:235 Authentication successful
+【2016/09/02 11:25:20】Send command:MAIL FROM:<xiaoquexing163@163.com>
+,expected code:250
+【2016/09/02 11:25:20】response:250 Mail OK
+【2016/09/02 11:25:20】Send command:RCPT TO: <297085213@qq.com>
+,expected code:250
+【2016/09/02 11:25:20】response:250 Mail OK
+【2016/09/02 11:25:20】Send command:DATA
+,expected code:354
+【2016/09/02 11:25:20】response:354 End data with <CR><LF>.<CR><LF>
+【2016/09/02 11:25:20】Send command:FROM: test<xiaoquexing163@163.com>
+TO: <297085213@qq.com>
+Subject: MeNA忘记密码
+Content-Type: multipart/alternative;
+	boundary="----=_Part_cec1309df5afec98e63953d450f524b057c9458038515"
+MIME-Version: 1.0
+
+------=_Part_cec1309df5afec98e63953d450f524b057c9458038515
+Content-Type:text/html; charset=utf-8
+Content-Transfer-Encoding: base64
+
+PGRpdiBzdHlsZT0ibWFyZ2luOjAgYXV0bzt3aWR0aDo4MCU7aGVpZ2h0OjEwMCU7Ij48ZGl2IHN0eWxlPSJtYXJnaW46MyUgYXV0bzt3aWR0aDo4MCU7aGVpZ2h0OjgwJTtib3JkZXI6MTBweCBzb2xpZCAjMDBiY2Q0O2JvcmRlci1zdHlsZTpvdXRzZXQ7YmFja2dyb3VuZC1pbWFnZTp1cmwoaHR0cDovL2ltZzEuM2xpYW4uY29tLzIwMTUvdzIvMzQvZC82NC5qcGcpIj48ZGl2IHN0eWxlPSJtYXJnaW46MTAlIGF1dG87d2lkdGg6ODAlO2hlaWdodDo4MCU7YmFja2dyb3VuZC1jb2xvcjojZmZmOWM0O2ZpbHRlcjpBbHBoYShPcGFjaXR5PTEwKTstbW96LW9wYWNpdHk6MC41O29wYWNpdHk6MC41OyI+PGRpdiBzdHlsZT0icGFkZGluZzogMTAlO3dpZHRoOjgwJTtoZWlnaHQ6ODAlO2ZvbnQ6MzBweDtmb250LXdlaWdodDpib2xkO2xpbmUtaGVpZ2h0OjEuNTsiPuS9oOWlve+8jOaCqOeahE1lTkHotKblj7cyOTcwODUyMTNAcXEuY29t5q2j5Zyo5L+u5pS55a+G56CB77yM6K+354K55Ye75Lul5LiL6ZO+5o6l5L+u5pS55a+G56CB77yI5pyJ5pWI5pyfM+Wkqe+8iTxwIHN0eWxlPSJ0ZXh0LWFsaWduOmNlbnRlciI+PGEgaHJlZj0iaHR0cHM6Ly93d3cuYmFpZHUuY29tL3M/d2Q9NDkyNTBhMzQ2YzQ0NWVmOTEzMGRiM2RhYjMxZGExM2I5YzE2ZGUzMCI+5L+u5pS55a+G56CBPC9hPjwvcD7lpoLmnpzkuI3mmK/mgqjmnKzkurrmk43kvZzvvIzor7flv73nlaXmraTpgq7ku7Y8L2Rpdj48L2Rpdj48L2Rpdj48L2Rpdj4=
+------=_Part_cec1309df5afec98e63953d450f524b057c9458038515
+
+.
+,expected code:250
+【2016/09/02 11:25:21】response:250 Mail OK queued as smtp9,DcCowACHAh2ARclXtHVJAA--.21676S2 1472808321
+【2016/09/02 11:25:21】Send command:QUIT
+,expected code:221
+【2016/09/02 11:25:21】response:221 Bye
+【2016/09/02 11:25:21】Mail OK!

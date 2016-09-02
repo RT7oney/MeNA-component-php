@@ -175,3 +175,40 @@ function common_check_parameter($data, $parameter) {
 function common_response($code, $msg, $data) {
 	return array('code' => (string) $code, 'msg' => $msg, 'data' => $data);
 }
+
+/**
+ * 发送邮件的方法
+ */
+function common_sendmail($to, $key) {
+	include_once './common/Email.php';
+	$mail = new MySendMail();
+	$mail->setServer("smtp.163.com", "xiaoquexing163@163.com", "123qweasdzxc");
+	$mail->setFrom("MeNA");
+	$mail->setReceiver($to);
+	//$mail->setReceiver("XXXXX@XXXXX");
+	// $mail->setCc("XXXXX@XXXXX");
+	// $mail->setCc("XXXXX@XXXXX");
+	// $mail->setBcc("XXXXX@XXXXX");
+	// $mail->setBcc("XXXXX@XXXXX");
+	// $mail->setBcc("XXXXX@XXXXX");
+	$mail->setMailInfo("MeNA忘记密码", email_tpl($to, $key));
+	$check = $mail->sendMail();
+	return $check;
+}
+
+/**
+ * 记录日志
+ */
+function common_log($log_data) {
+	$fd = fopen('../log/' . date('Ym') . '.log', "a");
+	$str = "【" . date("Y/m/d h:i:s", time()) . "】" . $log_data;
+	fwrite($fd, $str . "\n");
+	fclose($fd);
+}
+
+/**
+ * email 发送模板
+ */
+function email_tpl($email, $key) {
+	return '<div style="margin:0 auto;width:80%;height:100%;"><div style="margin:3% auto;width:80%;height:80%;border:10px solid #00bcd4;border-style:outset;background-image:url(http://img1.3lian.com/2015/w2/34/d/64.jpg)"><div style="margin:10% auto;width:80%;height:80%;background-color:#fff9c4;filter:Alpha(Opacity=10);-moz-opacity:0.5;opacity:0.5;"><div style="padding: 10%;width:80%;height:80%;font:30px;font-weight:bold;line-height:1.5;">你好，您的MeNA账号' . $email . '正在修改密码，请点击以下链接修改密码（有效期3天）<p style="text-align:center"><a href="https://www.baidu.com/s?wd=' . $key . '">修改密码</a></p>如果不是您本人操作，请忽略此邮件</div></div></div></div>';
+}
